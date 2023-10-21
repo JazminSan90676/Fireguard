@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Información de Temperatura</title>
+    <style>
+        body{
+            background-color: white;
+            font-family: "Digital", sans-serif;
+        }
+        
+        h2{
+             color: green;
+             text-align: center;
+        }
+
+        h3, h4, h5{
+            font-family: "Courier New", Courier, monospace;
+            text-align: center;
+        }
+
+        .table-container {
+            width: 50%;
+            margin: 20px auto;
+        }
+
+        table {
+            font-family: Arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        #btnRegresar {
+            margin: 20px auto;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            display: block;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+    <h2>Información de Temperatura</h2>
+    <h3>Temperatura actual: <span id="temperatureDisplay">25°C</span></h3>
+
+    <h4 id="fireStatus">Status: No hay peligro</h4>
+
+    <h5>Datos de Temperatura</h5>
+    <div class="table-container">
+        <table>
+            <tr>
+                <th>Medición</th>
+                <th>Temperatura (°C)</th>
+                <th>Estado de Fuego</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>23</td>
+                <td>No hubo fuego</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>28</td>
+                <td>No hubo fuego</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>26</td>
+                <td>No hubo fuego</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>30</td>
+                <td>No hubo fuego</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>21</td>
+                <td>No hubo fuego</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>25</td>
+                <td>No hubo fuego</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>290</td>
+                <td>¡Hubo fuego!</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>27</td>
+                <td>No hubo fuego</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>24</td>
+                <td>No hubo fuego</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>22</td>
+                <td>No hubo fuego</td>
+            </tr>
+        </table>
+    </div>
+
+    <button id="btnRegresar">Regresar</button>
+
+    <script>
+        const currentTemperature = 25; 
+
+        document.getElementById("temperatureDisplay").innerText = currentTemperature + "°C";
+
+        if (currentTemperature >= 290) {
+            document.getElementById("fireStatus").innerText = "¡Hubo fuego! ¡Peligro!";
+        }
+
+        document.getElementById('btnRegresar').onclick = function() {
+            window.location.href = 'inicio.html';
+        };
+    </script>
+</body>
+</html>
+
+</html>
+

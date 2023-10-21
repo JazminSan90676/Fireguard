@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Registro</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-image: url('fp1.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: #aade7c;
+        }
+        
+        h1 {
+            background-color: #ED2E0C;
+            color: #fff;
+            padding: 10px;
+            font-family: 'Calisto';
+        }
+        
+        form {
+            background-color: #8CD417;
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px #888888;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 15px;
+            color: #333;
+            font-weight: bold;
+        }
+        
+        input[type="text"],
+        input[type="tel"],
+        input[type="email"],
+        input[type="password"],
+        textarea {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #09a20b;
+            border-radius: 5px;
+            outline: none;
+        }
+        
+        input[type="submit"] {
+            background-color: #333;
+            color: #1ca00d;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        
+        input[type="submit"]:hover {
+            background-color: #555;
+        }
+    </style>
+    <script>
+        function validarFormulario() {
+            var nombre = document.getElementById('nombre').value;
+            var apellido = document.getElementById('apellido').value;
+            var dir = document.getElementById('dir').value;
+            var tel = document.getElementById('tel').value;
+            var correo = document.getElementById('correo').value;
+            var contrasenia = document.getElementById('contrasenia').value;
+            var info = document.getElementById('info').value;
+            
+            var nombreRegex = /^[A-Za-z]+$/;
+            var apellidoRegex = /^[A-Za-z]+$/;
+            var telRegex = /^[0-9]+$/;
+            var correoRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            var contraseniaRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
+            
+            if (!nombre.match(nombreRegex)) {
+                alert("Por favor, introduzca un nombre válido que contenga solo letras.");
+                return false;
+            }
+            if (!apellido.match(apellidoRegex)) {
+                alert("Por favor, introduzca un apellido válido que contenga solo letras.");
+                return false;
+            }
+            if (!dir) {
+                alert("Por favor, introduzca una dirección válida.");
+                return false;
+            }
+            if (!tel.match(telRegex)) {
+                alert("Por favor, introduzca un número de teléfono válido que contenga solo números.");
+                return false;
+            }
+            if (!correo.match(correoRegex)) {
+                alert("Por favor, introduzca un correo electrónico válido.");
+                return false;
+            }
+            if (!contrasenia.match(contraseniaRegex)) {
+                alert("La contraseña debe tener al menos una letra mayúscula, una letra minúscula, un número y debe tener entre 6 y 20 caracteres.");
+                return false;
+            }
+            if (!info) {
+                alert("Por favor, complete el campo de información adicional.");
+                return false;
+            }
+            
+            alert("Registro exitoso");
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <h1>REGISTRO DE FIREGUARD</h1>
+    <form onsubmit="return validarFormulario()">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+        
+        <label for="apellido">Apellidos:</label>
+        <input type="text" id="apellido" name="apellido" required>
+        
+        <label for="dir">Dirección:</label>
+        <input type="text" id="dir" name="dir" required>
+        
+        <label for="tel">Teléfono:</label>
+        <input type="tel" id="tel" name="tel" required>
+        
+        <label for="correo">Correo Electrónico:</label>
+        <input type="email" id="correo" name="correo" required>
+        
+        <label for="contrasenia">Contraseña:</label>
+        <input type="password" id="contrasenia" name="contrasenia" required>
+        
+        <label for="info">Información Adicional:</label>
+        <textarea id="info" name="info" rows="4" required></textarea>
+        
+        <input type="submit" value="Registrarse">
+    </form>
+    
+    <div id="botones">
+        <button onclick="window.location.href='inicio.html'">Regresar</button>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            alert('Bienvenido al registro, este apartado es para generar tu perfil en Fireguard');
+        });
+    </script>
+</body>
+</html>
+

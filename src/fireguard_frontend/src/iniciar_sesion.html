@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Inicio de Sesión</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #9CEA13;
+        }
+        
+        h1 {
+            color: #333;
+        }
+        
+        form {
+            max-width: 300px;
+            margin: 40px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+        
+        input[type="text"],
+        input[type="password"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Iniciar Sesión</h1>
+    <form action="monitoreo.html" method="post">  
+        <input type="text" id="username" name="username" placeholder="Usuario" required><br>
+        <input type="password" id="password" name="password" placeholder="Contraseña" required><br>
+        <input type="submit" value="Iniciar Sesión" onclick="window.location.href='monitoreo.html'">
+    </form>
+    <div id="botones">
+        <button onclick="window.location.href='inicio.html'">Regresar</button>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            alert('¡Bienvenido al inicio de sesión, accede a tu perfil con tu correo y tu contraseña, por favor!');
+        });
+    </script>
+</body>
+</html>
+

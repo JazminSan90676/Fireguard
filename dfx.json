@@ -1,0 +1,29 @@
+{
+  "canisters": {
+    "fireguard_backend": {
+      "main": "src/fireguard_backend/main.mo",
+      "type": "motoko"
+    },
+    "fireguard_frontend": {
+      "dependencies": [
+        "fireguard_backend"
+      ],
+      "frontend": {
+        "entrypoint": "src/fireguard_frontend/src/index.html"
+      },
+      "source": [
+        "src/fireguard_frontend/assets",
+        "dist/fireguard_frontend/"
+      ],
+      "type": "assets"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
